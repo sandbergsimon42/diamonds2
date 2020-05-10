@@ -20,6 +20,21 @@ First you need to register one or more bots if not already done. This can be don
 The application will print out a token if the registration was successful. Don't loose this token, it is your password to be able to play using this bot!
 
 
+------ ONLINE
+'botToken': '86e9bc53-5def-40c3-b6e5-832341c45d72'
+------ ONLINE
+
+pipenv run start --token 86e9bc53-5def-40c3-b6e5-832341c45d72 --board 3 --time-factor=1000 --logic RandomDiamond
+(Detta är vad jag körde med senast)
+
+pipenv run start --name testiboyyy --email sandbergsimon42@gmail.com --board 4 --time-factor=5 --logic RandomDiamond
+(för att lägga till ny robot)
+
+
+----locally
+###'botToken': 'fd9fecbe-547c-46d0-bdcd-f8645481f082' 
+--------locally
+
 Run a game session
 ------------------
 

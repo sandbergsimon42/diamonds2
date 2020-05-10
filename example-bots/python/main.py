@@ -11,7 +11,8 @@ from game.logic.random_diamond import RandomDiamondLogic
 from colorama import init, Fore, Back, Style
 
 init()
-BASE_URL = "http://localhost:8081/api"
+#BASE_URL = "http://localhost:8081/api"
+BASE_URL = "http://diamonds.etimo.se/api"
 CONTROLLERS = {
     "Random": RandomLogic,
     "FirstDiamond": FirstDiamondLogic,
@@ -161,8 +162,8 @@ while True:
         break
 
     # Don't spam the board more than it allows!
-    # sleep(move_delay * time_factor)
-    sleep(1)
+    sleep(move_delay * time_factor)
+    #sleep(0.1)
 
 ###############################################################################
 #
