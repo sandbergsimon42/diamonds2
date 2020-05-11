@@ -24,7 +24,7 @@ The application will print out a token if the registration was successful. Don't
 'botToken': '86e9bc53-5def-40c3-b6e5-832341c45d72'
 ------ ONLINE
 
-pipenv run start --token 86e9bc53-5def-40c3-b6e5-832341c45d72 --board 3 --time-factor=1000 --logic RandomDiamond
+pipenv run start --token 86e9bc53-5def-40c3-b6e5-832341c45d72 --board 2 --time-factor=1 --logic RandomDiamond
 (Detta är vad jag körde med senast)
 
 pipenv run start --name testiboyyy --email sandbergsimon42@gmail.com --board 4 --time-factor=5 --logic RandomDiamond
