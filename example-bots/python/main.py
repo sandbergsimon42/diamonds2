@@ -133,7 +133,7 @@ if not current_board_id:
 #
 ###############################################################################
 board = bot.get_board(current_board_id)
-move_delay = board.data["minimumDelayBetweenMoves"] / 1000
+move_delay = board.data["minimumDelayBetweenMoves"] / 1300
 
 ###############################################################################
 #
