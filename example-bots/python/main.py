@@ -8,6 +8,10 @@ from game.util import *
 from game.logic.random import RandomLogic
 from game.logic.first_diamond import FirstDiamondLogic
 from game.logic.random_diamond import RandomDiamondLogic
+from game.logic.upper_left import UpperLeft
+from game.logic.upper_right import UpperRight
+from game.logic.lower_left import LowerLeft
+from game.logic.lower_right import LowerRight
 from colorama import init, Fore, Back, Style
 
 init()
@@ -17,6 +21,10 @@ CONTROLLERS = {
     "Random": RandomLogic,
     "FirstDiamond": FirstDiamondLogic,
     "RandomDiamond": RandomDiamondLogic,
+    "UpperLeft": UpperLeft,
+    "UpperRight" : UpperRight,
+    "LowerLeft" : LowerLeft,
+    "LowerRight" : LowerRight,
 }
 
 ###############################################################################
@@ -133,15 +141,18 @@ if not current_board_id:
 #
 ###############################################################################
 board = bot.get_board(current_board_id)
-move_delay = board.data["minimumDelayBetweenMoves"] / 1300
+move_delay = board.data["minimumDelayBetweenMoves"] / 2600
 
 ###############################################################################
 #
 # Game play loop
 #
 ###############################################################################
+postcounter = 0
+
 while True:
     # Find our info among the bots on the board
+    #postcounter += 1
     board_bot = board.get_bot(bot)
 
     # Calculate next move
@@ -155,6 +166,8 @@ while True:
     else:
         board = Board(resp)
 
+    #print ("DETTA ÄR POSTCOUNTER " , postcounter)
+    #print ("DETTA ÄR MOVEDELAY " , move_delay)
     # Get new state
     board_bot = board.get_bot(bot)
     if not board_bot:
@@ -162,6 +175,8 @@ while True:
         break
 
     # Don't spam the board more than it allows!
+    #print ("DETTA ÄR POSTCOUNTER " , postcounter)
+    #print ("DETTA ÄR MOVEDELAY " , move_delay)
     sleep(move_delay * time_factor)
     #sleep(0.1)
 
@@ -175,3 +190,5 @@ print("You played using the following token:")
 print(Style.BRIGHT + bot.bot_token + Style.RESET_ALL)
 print("Restart bot to run again. Use the following command:")
 print("{} --token={}".format(sys.argv[0], bot.bot_token))
+
+

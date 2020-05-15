@@ -35,4 +35,4 @@ else
 fi
 
 wait
-sleep 5
+sleep 5P
